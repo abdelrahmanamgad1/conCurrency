@@ -10,15 +10,18 @@ import { ErrorInterceptor } from './core/interceptors/error-catching.interceptor
 import { DropdownComponent } from './shared/ui-elements/dropdown/dropdown.component';
 import { NavigationFormComponent } from './components/navigation-form/navigation-form.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
-  declarations: [AppComponent, DropdownComponent, NavigationFormComponent, LandingPageComponent],
+  declarations: [AppComponent, DropdownComponent, NavigationFormComponent, LandingPageComponent, FavouritesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    DynamicDialogModule,
   ],
   providers: [
     {

@@ -1,1 +1,26 @@
-<p>landing-page works!</p>
+<div class="background-img">
+     <nav class="logo">
+            <img class="img" src="assets/images/final 1 (2).png">
+        </nav>
+    
+  <div class="container-transperant">
+   <!-- <div class="btns">
+    <button class="b"> Convert</button>
+    <button class="b"> Compare</button>
+   </div> -->
+   <div class="switch-button">
+    <button
+      class="switch-button-option"
+      [class.active]="selectedOption === 'photo'"
+      (click)="setSelectedOption('photo')"
+    >Convert</button>
+    <button
+      class="switch-button-option"
+      [class.active]="selectedOption === 'video'"
+      (click)="setSelectedOption('video')"
+    >Compare</button>
+  </div>
+
+  </div>
+</div>
+
