@@ -1,23 +1,46 @@
-import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable, throwError} from 'rxjs';
-import {catchError} from "rxjs/operators";
-import { ApiService } from '../services/api.service';
-@Injectable()
-export class ErrorCatchingInterceptor implements HttpInterceptor {
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpErrorResponse,
+} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { NotificationService } from '../services/notification.service';
 
-  constructor(private apiErrorService: ApiService) {}
-  
-  
+const toastrConfig: any = {
+  timeOut: 5000,
+  positionClass: 'toast-top-right',
+  closeButton: true,
+  progressBar: true,
+  extendedTimeOut: 2000,
+  disableTimeOut: false,
+  progressAnimation: 'decreasing',
+  enableHtml: true,
+  toastClass: 'ngx-toastr',
+};
+@Injectable()
+export class ErrorInterceptor implements HttpInterceptor {
+  constructor(private notificationService: NotificationService) {}
+
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
-    ): Observable<HttpEvent<any>> {
-      console.log("Passed through the interceptor in request");
-      
+  ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        return this.apiErrorService.transformError(error);
+        console.log('Passed through the interceptor inshallah');
+
+        this.notificationService.SetErrorMessage({
+          message: 'mesh shayef error',
+          title: 'Sabet',
+          ic: toastrConfig,
+          type: 'error',
+        });
+
+        throw error;
       })
     );
   }
