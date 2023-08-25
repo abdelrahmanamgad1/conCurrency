@@ -3,17 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ErrorCatchingInterceptor } from './core/interceptors/error-catching.interceptor';
+import { ErrorInterceptor } from './core/interceptors/error-catching.interceptor';
+import { TestComponent } from './testcomponent/testcomponent.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: ErrorCatchingInterceptor,
-    multi: true
- }],
+  declarations: [AppComponent, TestComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
