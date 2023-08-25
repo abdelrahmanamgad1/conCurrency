@@ -3,12 +3,23 @@ import { HttpClient } from '@angular/common/http'; // Import the HttpClient modu
 
 @Component({
   selector: 'app-test',
-  template: '<button (click)="triggerError()">Trigger Error</button>',
+  templateUrl: '/testcomponent.component.html',
 })
 export class TestComponent {
+  data=""
+   stableUrl = "https://jsonplaceholder.typicode.com/todos/10"
+   damagedUrl = "https://jsonplaceholder.typicode.com/todos/1p"
   constructor(private http: HttpClient) {}
 
   triggerError() {
-    this.http.get('https://example.com/nonexistent-url').subscribe();
+    this.http.get(this.damagedUrl).subscribe(res => {
+      this.data = JSON.stringify(res)
+          })  
+  }
+
+  testUrl() {
+    this.http.get(this.stableUrl).subscribe(res => {
+      this.data = JSON.stringify(res)
+          })  
   }
 }
