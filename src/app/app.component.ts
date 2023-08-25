@@ -14,7 +14,7 @@ export class AppComponent {
   constructor( private notificationService:NotificationService){}
   buttonClick(type: string) {
     this.toast = {
-      message: 'ERROR !!',
+      message: 'ERROR ana nadeen!!',
       type: type,
       ic: {
         timeOut: 2500,

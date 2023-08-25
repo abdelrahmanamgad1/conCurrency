@@ -7,10 +7,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error-catching.interceptor';
-import { TestComponent } from './testcomponent/testcomponent.component';
+import { DropdownComponent } from './shared/ui-elements/dropdown/dropdown.component';
+import { NavigationFormComponent } from './components/navigation-form/navigation-form.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent],
+  declarations: [AppComponent, DropdownComponent, NavigationFormComponent, LandingPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
