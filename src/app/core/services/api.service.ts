@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  protected _currencies: Currency[] = [];
+   protected _currencies: Currency[] = [];
 
   private baseUrl = 'https://currencyconversionproject-production.up.railway.app';
 
@@ -33,7 +33,7 @@ export class ApiService {
 
 
 }
-  
+///
 
 
   // getCurrencyApi(): Observable<Currency> {
