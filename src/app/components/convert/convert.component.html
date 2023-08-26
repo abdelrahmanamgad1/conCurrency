@@ -1,0 +1,37 @@
+<form [formGroup]="exform">
+  <div class="card flex justify-content-center">
+    <label>Amount</label>
+    <input
+      pInputText
+      pKeyFilter="int"
+      [(ngModel)]="value"
+      formControlName="value"
+    />
+    <label>From</label>
+    <p-dropdown
+      [options]="cities"
+      [(ngModel)]="selectedCity"
+      optionLabel="name"
+    />
+  </div>
+
+  <hr />
+
+  <div class="card flex justify-content-center">
+    <label>To</label>
+    <p-dropdown
+      [options]="cities"
+      [(ngModel)]="selectedCity"
+      optionLabel="name"
+    />
+    <!-- [ngModel]="amount" 
+    should be injected in the next input,
+    however it enables the input -->
+    <label>Amount</label>
+    <input id="disabled-input" type="text" pInputText [disabled]="true" />
+  </div>
+
+  <hr />
+
+  <p-button label="Convert"></p-button>
+</form>

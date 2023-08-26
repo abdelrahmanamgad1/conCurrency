@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
+  selectedOption: string | null = null;
 
+  setSelectedOption(option: string): void {
+    this.selectedOption = option;
+}
 }
