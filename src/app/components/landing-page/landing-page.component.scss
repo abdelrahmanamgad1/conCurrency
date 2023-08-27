@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
 .logo{
     display: block;
@@ -34,11 +35,13 @@ padding: 2% 5%;
         display: flex;
         margin: auto;
         margin-right: 30%;
-        
+       height:40%;
+       border: 0.1px solid rgb(128,128,128);
 }
 .switch-button{
     position: absolute;
   top: 10%;
+  left:25%;
 //   border: 3px solid blue;
     
 }
@@ -81,6 +84,7 @@ padding: 2% 5%;
     color: black;
     transition: background-color 0.3s, color 0.3s;
     position: relative;
+    border-radius: 20px;
   }
   
   .switch-button-option.active {
@@ -88,5 +92,4 @@ padding: 2% 5%;
     color:black;
     
 }
-
 

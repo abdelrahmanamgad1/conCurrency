@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NotificationService } from './core/services/notification.service';
 import { IndividualConfig } from 'ngx-toastr';
 import { toastPayload } from './core/interfaces/toastPayLoad';
+import { CurrencyCardModel } from './models/data.model';
+import { CardsListStaticData } from './models/data.static';
 
 @Component({
   selector: 'app-root',
@@ -22,5 +24,11 @@ export class AppComponent {
       } as IndividualConfig,
     };
     this.notificationService.SetErrorMessage(this.toast);
+  }
+  showFav = false;
+  staticCardsList = CardsListStaticData;
+
+  testFavChanges(card: CurrencyCardModel) {
+    console.log(card);
   }
 }

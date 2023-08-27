@@ -12,9 +12,10 @@ import { NavigationFormComponent } from './components/navigation-form/navigation
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { RateCardComponent } from './components/rate-card/rate-card.component';
 
 @NgModule({
-  declarations: [AppComponent, DropdownComponent, NavigationFormComponent, LandingPageComponent, FavouritesComponent],
+  declarations: [AppComponent, DropdownComponent, NavigationFormComponent,LandingPageComponent, FavouritesComponent, RateCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +23,8 @@ import { FavouritesComponent } from './favourites/favourites.component';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     DynamicDialogModule,
+    
+    
   ],
   providers: [
     {
