@@ -1,0 +1,34 @@
+:host ::ng-deep .p-dropdown {
+  width: 14rem;
+  border-radius: 35.238px;
+  border: 0.881px solid #c5c5c5;
+  background: #f9f9f9;
+}
+
+::ng-deep {
+  .p-inputtext {
+    border-radius: 35.238px;
+    width: 100px;
+    flex-shrink: 0;
+    border: 0.881px solid #c5c5c5;
+    background: #f9f9f9;
+  }
+  // .p-inputtext: not([disabled]):hover {
+  //   background: #f9f9f9;
+
+  // }
+}
+
+::ng-deep {
+  .p-button {
+    border-radius: 35.238px;
+    background: #0e98d0;
+    width: 537.923px;
+    height: 81.969px;
+    flex-shrink: 0;
+  }
+
+  //   .p-button:hover {
+  //     background: green;
+  // }
+}
