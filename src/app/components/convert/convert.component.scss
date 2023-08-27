@@ -27,7 +27,9 @@
     height: 81.969px;
     flex-shrink: 0;
   }
-
+  .p-disabled, .p-component:disabled{
+    opacity: 1;
+  }
   //   .p-button:hover {
   //     background: green;
   // }

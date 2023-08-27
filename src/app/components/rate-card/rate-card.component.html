@@ -1,0 +1,16 @@
+<!-- image   -->
+<div class="country-logo">
+  <img [src]="cardData.imgURL" alt="country-flag" />
+</div>
+<!-- currency & country  -->
+
+<div class="titles">
+  <h4>{{ cardData.countryTitle }}</h4>
+  <h5>{{ cardData.currencyTitle }}</h5>
+</div>
+
+<!-- rate or check -->
+
+<div class="extra-data">
+  <ng-content></ng-content>
+</div>

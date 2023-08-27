@@ -6,6 +6,8 @@ import { ApiService } from './core/services/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Currency } from './core/interfaces/currency.model';
 import { Observable } from 'rxjs';
+import { CurrencyCardModel } from './models/data.model';
+import { CardsListStaticData } from './models/data.static';
 
 @Component({
   selector: 'app-root',
@@ -41,5 +43,11 @@ export class AppComponent {
       } as IndividualConfig,
     };
     this.notificationService.SetErrorMessage(this.toast);
+  }
+  showFav = false;
+  staticCardsList = CardsListStaticData;
+
+  testFavChanges(card: CurrencyCardModel) {
+    console.log(card);
   }
 }

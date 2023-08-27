@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
-  selectedOption: string | null = null;
+  selectedOption: string = 'convert';
 
   setSelectedOption(option: string): void {
     this.selectedOption = option;
-}
+  }
 }
