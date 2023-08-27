@@ -1,0 +1,50 @@
+<form [formGroup]="exform">
+  <div class="card flex justify-content-center" *ngIf="countries.length>0">
+    <label>Amount</label>
+    <input
+      pInputText
+      pKeyFilter="int"
+      formControlName="value"
+    />
+    <label>From</label>
+    <p-dropdown
+      [options]="countries"
+      formControlName="selectedCountry"
+
+    >
+      <ng-template pTemplate="selectedItem">
+        <div class="flex align-items-center gap-2">
+          <img [src]="exform.get('selectedCountry')?.value?.flagUrl"/>
+          <div>{{ exform.get("selectedCountry")?.value?.name }}</div>
+        </div>
+      </ng-template>
+      <ng-template let-country pTemplate="item">
+        <div class="flex align-items-center">
+          <img [src]="country.flagUrl"/>
+          <span>{{ country.code }}</span>
+        </div>
+      </ng-template>
+    </p-dropdown>
+  </div>
+
+  <hr/>
+
+  <div class="card flex justify-content-center">
+    <label>To</label>
+    <p-dropdown
+
+      [options]="countries"
+      formControlName="selectedCountry"
+      optionLabel="name"
+    />
+    <!-- [ngModel]="amount"
+    should be injected in the next input,
+    however it enables the input -->
+    <label>Amount</label>
+    <input id="disabled-input" type="text" pInputText [disabled]="true"/>
+  </div>
+
+  <hr/>
+
+  <p-button label="Convert"></p-button>
+</form>

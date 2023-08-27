@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   HttpInterceptor,
   HttpRequest,
@@ -6,9 +6,9 @@ import {
   HttpEvent,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { NotificationService } from '../services/notification.service';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {NotificationService} from '../services/notification.service';
 
 const toastrConfig: any = {
   timeOut: 5000,
@@ -21,14 +21,16 @@ const toastrConfig: any = {
   enableHtml: true,
   toastClass: 'ngx-toastr',
 };
+
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private notificationService: NotificationService) {}
+  constructor(private notificationService: NotificationService) {
+  }
 
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  ): any {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         console.log('Passed through the interceptor inshallah');
@@ -40,7 +42,7 @@ export class ErrorInterceptor implements HttpInterceptor {
           type: 'error',
         });
 
-        throw error;
+        return '';
       })
     );
   }
