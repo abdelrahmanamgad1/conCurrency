@@ -14,6 +14,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { ApiService } from './core/services/api.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { ButtonModule } from 'primeng/button';
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
       multi: true,
-    },
+    },ApiService
   ],
   bootstrap: [AppComponent],
 })

@@ -4,14 +4,13 @@
     <input
       pInputText
       pKeyFilter="int"
-      [(ngModel)]="value"
       formControlName="value"
     />
     <label>From</label>
     <p-dropdown
-      [options]="cities"
-      [(ngModel)]="selectedCity"
-      optionLabel="name"
+     [options]="countries"
+      formControlName="selectedCountry"
+      optionLabel="selectedCountry"
     />
   </div>
 
@@ -20,8 +19,10 @@
   <div class="card flex justify-content-center">
     <label>To</label>
     <p-dropdown
-      [options]="cities"
-      [(ngModel)]="selectedCity"
+    *ngIf="countries.length > 0"
+
+      [options]="countries"
+      formControlName="selectedCountry"
       optionLabel="name"
     />
     <!-- [ngModel]="amount" 

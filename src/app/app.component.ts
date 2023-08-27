@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { Currency } from './core/interfaces/currency.model';
 import { Observable } from 'rxjs';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,8 +16,8 @@ export class AppComponent {
   title = 'conCurrency';
   toast!: toastPayload;
   data: Currency[] = [];
-  datas="";
-
+  datas = '';
+  arr!: string;
 
   constructor(
     private notificationService: NotificationService,
@@ -27,10 +26,8 @@ export class AppComponent {
   ) {}
 
   getData() {
-    this.apiService.getCurrencyApi().subscribe((response) => {
-      const arr= response.map(function(value){return value.name})
-      this.datas = arr[1];
-      console.log(this.datas);    
+    this.apiService.getCurrencyApi().subscribe((res) => {
+      this.arr = JSON.stringify(res);
     });
   }
 
