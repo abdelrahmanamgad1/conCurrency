@@ -3,14 +3,14 @@
 <button (click)="showFav = true"> <img src="../assets/images/plus 1.jpg"> Add to favourite</button>
 
 <div class="l-container">
-    <app-rate-card  *ngFor="let card of staticCardsList" [cardData]="card">
-       0.00
+    <app-rate-card  *ngFor="let card of myFavArray" [cardData]="card">
+       0.00 hamada
       </app-rate-card>
 </div>
 
 <app-favourites
   *ngIf="showFav"
-  [cardsList]="staticCardsList"
+  [cardsList]="staticCardsList" 
   (closeFav)="showFav = $event"
   (favItemChanges)="testFavChanges($event)"
 ></app-favourites>

@@ -1,12 +1,12 @@
 .l-container {
-    width: 30%;
     padding: 1rem;
     background-color: white;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     // align-items: stretch;
     gap: 1rem;
+    
   }
   button{
     margin-left: 80%;

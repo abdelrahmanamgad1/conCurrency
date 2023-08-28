@@ -8,4 +8,5 @@ import { CurrencyCardModel } from 'src/app/models/data.model';
 })
 export class RateCardComponent {
   @Input() cardData!: CurrencyCardModel
+  
 }

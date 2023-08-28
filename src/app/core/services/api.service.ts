@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ConvCurrency, Currency, Data} from '../interfaces/currency.model';
 import { Observable,map } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,12 @@ export class ApiService {
     convert(data: ConvCurrency): Observable<ConvCurrency> {
       return this.http.post<ConvCurrency>(`${this.baseUrl}/pair-conversion`, data);
     }
+  //  selectFavourite(base_currency: string):Observable<any>{
+  //   return this.http.post<any>(this.apiUrl)/favorite-currencies?base={base_currency}
+  //  }
 
-
+   postData(data: any,baseCurrency:any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/favorite-currencies?base=${baseCurrency}`, data);
+  }
   }
 
