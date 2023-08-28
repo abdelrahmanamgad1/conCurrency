@@ -3,6 +3,7 @@
   border-radius: 35.238px;
   border: 0.881px solid #c5c5c5;
   background: #f9f9f9;
+
 }
 
 ::ng-deep {
@@ -13,24 +14,78 @@
     border: 0.881px solid #c5c5c5;
     background: #f9f9f9;
   }
-  // .p-inputtext: not([disabled]):hover {
-  //   background: #f9f9f9;
 
-  // }
 }
 
 ::ng-deep {
   .p-button {
     border-radius: 35.238px;
     background: #0e98d0;
-    width: 537.923px;
-    height: 81.969px;
+    width: 100% ;
+
     flex-shrink: 0;
+    font-family: Montserrat;
+    font-size: 21.107px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
-  .p-disabled, .p-component:disabled{
+
+  .p-disabled,
+  .p-component:disabled {
     opacity: 1;
   }
+
   //   .p-button:hover {
   //     background: green;
   // }
 }
+
+.card-label {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card {
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  .input-con {
+    display: inline-flex;
+    flex-direction: column;
+
+    &.flex-2 {
+      flex: 2;
+    }
+
+    &.flex-1 {
+      flex: 1;
+    }
+
+  }
+
+
+}
+
+drop-down {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 1% 5%;
+
+}
+
+//.dropdown-selected{
+//  display: flex;
+//  justify-content: flex-start;
+//  align-items: center;
+//  gap: 15px;
+//  //padding: 0 5%;
+//}

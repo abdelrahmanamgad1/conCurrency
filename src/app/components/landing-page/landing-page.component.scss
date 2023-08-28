@@ -1,4 +1,3 @@
-
 .background-img {
   background-image: url(../../../assets/images/background.jpg);
   background-size: cover;
@@ -20,8 +19,7 @@
   border-radius: 18px;
   background: linear-gradient(134deg, rgba(0, 0, 0, 0.40) 0%, rgba(157, 157, 157, 0.20) 100%);
   backdrop-filter: blur(4.504402160644531px);
-  width: 45%;
-  padding: 8% 10%;
+  padding: 6% 7%;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -34,14 +32,14 @@
     display: flex;
     margin-bottom: 2%;
     border-radius: 30px;
-    width: 55%;
+    width: 100%;
     justify-content: space-between;
     font-size: 18px;
     background-color: #F0F0F0;
     gap: 15px;
     .switch-button-option {
       cursor: pointer;
-      padding: 3% 12%;
+      padding: 1rem 3.3rem;
       display: inline-flex;
       border: none;
       background: transparent;
@@ -63,4 +61,3 @@
   color: black;
 
 }
-
