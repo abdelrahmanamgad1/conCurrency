@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component} from '@angular/core'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,6 +7,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
+  constructor( private router : Router){}
   selectedOption: string = 'convert';
 
   setSelectedOption(option: string): void {
