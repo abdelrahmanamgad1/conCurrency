@@ -30,4 +30,5 @@ export class ApiService {
       `${this.baseUrl}/pair-conversion?base=${base}&target=${target}&amount=${amount}`
     ).pipe(map((response:any)=>{return response['data']['conversion_result'] as number}));
   }
+
 }
