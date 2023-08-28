@@ -16,9 +16,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ApiService } from './core/services/api.service';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
-import { FavouritesComponent } from './favourites/favourites.component';
 import { RateCardComponent } from './components/rate-card/rate-card.component';
 import { CompareComponent } from './components/compare/compare.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,10 @@ import { CompareComponent } from './components/compare/compare.component';
     DropdownComponent,
     NavigationFormComponent,
     LandingPageComponent,
-    FavouritesComponent,
     RateCardComponent,
     ConvertComponent,
     CompareComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
