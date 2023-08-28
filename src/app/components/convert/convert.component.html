@@ -1,50 +1,63 @@
 <form [formGroup]="exform">
-  <div class="card flex justify-content-center" *ngIf="countries.length>0">
-    <label>Amount</label>
-    <input
-      pInputText
-      pKeyFilter="int"
-      formControlName="value"
-    />
-    <label>From</label>
-    <p-dropdown
-      [options]="countries"
-      formControlName="selectedCountry"
+  <div class="card" *ngIf="countries.length > 0">
+    <div class="input-con flex-1">
+      <label class="card-label">Amount</label>
+      <input pInputText pKeyFilter="pint" formControlName="value"/>
+    </div>
+    <div class="input-con flex-2">
+      <label class="card-label" >From</label>
 
-    >
-      <ng-template pTemplate="selectedItem">
-        <div class="flex align-items-center gap-2">
-          <img [src]="exform.get('selectedCountry')?.value?.flagUrl"/>
-          <div>{{ exform.get("selectedCountry")?.value?.name }}</div>
-        </div>
-      </ng-template>
-      <ng-template let-country pTemplate="item">
-        <div class="flex align-items-center">
-          <img [src]="country.flagUrl"/>
-          <span>{{ country.code }}</span>
-        </div>
-      </ng-template>
-    </p-dropdown>
+      <p-dropdown [options]="countries" formControlName="srcCountry">
+        <ng-template pTemplate="selectedItem">
+          <div class="drop-down">
+            <img [src]="exform.get('srcCountry')?.value['flagUrl']"/>
+            <div>{{ exform.get("srcCountry")?.value['code'] }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="drop-down">
+            <img [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
   </div>
 
-  <hr/>
-
-  <div class="card flex justify-content-center">
-    <label>To</label>
-    <p-dropdown
-
-      [options]="countries"
-      formControlName="selectedCountry"
-      optionLabel="name"
-    />
-    <!-- [ngModel]="amount"
-    should be injected in the next input,
-    however it enables the input -->
-    <label>Amount</label>
-    <input id="disabled-input" type="text" pInputText disabled/>
+  <div class="card flex justify-content-center" *ngIf="countries.length > 0">
+    <div class="input-con flex-1">
+      <label class="card-label">To</label>
+      <p-dropdown [options]="countries" formControlName="dstCountry">
+        <ng-template pTemplate="selectedItem">
+          <div class="drop-down">
+            <img [src]="exform.get('dstCountry')?.value['flagUrl']"/>
+            <span>{{ exform.get("dstCountry")?.value['code'] }}</span>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="drop-down">
+            <img [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+    <div class="input-con flex-2">
+      <label class="card-label">Amount</label>
+      <input
+        id="disabled-input"
+        type="text"
+        pInputText
+        readonly="readonly"
+        formControlName="amount"
+      />
+    </div>
   </div>
 
-  <hr/>
+  <p-button
+    label="Convert"
+    [disabled]="!exform.valid"
+    (onClick)="convert()"
+  ></p-button>
 
-  <p-button label="Convert"></p-button>
 </form>

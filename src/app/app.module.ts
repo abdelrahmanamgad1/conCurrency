@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error-catching.interceptor';
 import { DropdownComponent } from './shared/ui-elements/dropdown/dropdown.component';
@@ -16,8 +16,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ApiService } from './core/services/api.service';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { FavouritesComponent } from './favourites/favourites.component';
 import { RateCardComponent } from './components/rate-card/rate-card.component';
-import { FavouritesComponent } from './components/favourites/favourites.component';
+import { CompareComponent } from './components/compare/compare.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     FavouritesComponent,
     RateCardComponent,
     ConvertComponent,
+    CompareComponent,
   ],
   imports: [
     BrowserModule,

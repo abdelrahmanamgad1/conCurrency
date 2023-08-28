@@ -1,20 +1,5 @@
-// export interface Currency {
-//   statusCode: number;
-//   data: Data[];
-// }
-
-// export interface Data {
-//   code: string;
-//   name: string;
-//   url: string;
-// }
-
-// export dropDown{
-
-// }
-
 export interface Currency {
-  number: number;
+  statusCode: number;
   data: Data[];
 }
 
@@ -29,3 +14,18 @@ export interface ConvCurrency{
   target: string;
   amount: number;
 }
+
+// export interface Currency {
+//   statusCode: number;
+//   data: Data[];
+// }
+
+// export interface Data {
+//   code: string;
+//   name: string;
+//   url: string;
+// }
+
+// export dropDown{
+
+// }
