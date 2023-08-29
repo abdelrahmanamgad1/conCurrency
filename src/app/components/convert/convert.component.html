@@ -26,7 +26,7 @@
   </div>
 
   <div class="card flex justify-content-center">
-    <div class="input-con flex-1" >
+    <div class="input-con flex-1">
       <label class="card-label">To</label>
       <p-dropdown [options]="apiService.countries" formControlName="dstCountry">
         <ng-template pTemplate="selectedItem">
@@ -60,9 +60,8 @@
     [disabled]="!exform.valid"
     (onClick)="convert()"
   >
-    <div class="card" *ngIf="isLoading">
-      <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
-    </div>
+    <p-progressSpinner *ngIf="isLoading" [style]="{ width: '25px', height: '25px' }" styleClass="w-4rem h-4rem"
+                       strokeWidth="10" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
   </p-button>
 
 </form>
