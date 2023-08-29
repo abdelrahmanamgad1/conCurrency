@@ -8,12 +8,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class ApiService {
   countries: Country[] = [];
-  testUrl =
-    'https://v6.exchangerate-api.com/v6/ecf10bab01b34bf0de9636e1/latest/USD';
 
-  baseUrl = 'https://diligent-stranger-production.up.railway.app/';
+  baseUrl = 'https://tiresome-part-production.up.railway.app';
 
-  apiUrl = `${this.baseUrl}currencies`;
+  apiUrl = `${this.baseUrl}/currencies`;
 
   constructor(private http: HttpClient) {
   }

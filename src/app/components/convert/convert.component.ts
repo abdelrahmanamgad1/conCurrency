@@ -45,7 +45,6 @@ export class ConvertComponent implements OnInit {
       .subscribe((response) => {
 
         this.exform.controls['amount'].setValue(response);
-
         this.isLoading=false;
 
       });

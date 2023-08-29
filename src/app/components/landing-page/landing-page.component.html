@@ -2,21 +2,20 @@
   <nav class="logo">
     <img class="img" src="assets/images/final 1 (2).png"/>
   </nav>
-<!--  *ngIf="apiService.countries.length > 0; else spinner"-->
+
   <div class="container-transperant">
     <div class="switch-button">
       <button
-        class="switch-button-option"
-        routerLinkActive="active"
-        routerLink="/convert"
+              class="switch-button-option"
+              routerLinkActive="active"
+              routerLink="/convert"
       >
         Convert
       </button>
       <button
-        class="switch-button-option"
-        routerLinkActive="active"
-        routerLink="/compare"
-
+              class="switch-button-option"
+              routerLinkActive="active"
+              routerLink="/compare"
       >
         Compare
       </button>
@@ -24,9 +23,10 @@
     <router-outlet></router-outlet>
 
   </div>
-  <ng-template #spinner>
-    <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
-  </ng-template>
+    <ng-template #spinner>
+      <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
+    </ng-template>
+
 </div>
 
 <div style="margin: 1rem 6rem">
