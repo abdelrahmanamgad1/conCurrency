@@ -18,12 +18,37 @@
         [class.active]="selectedOption === 'compare'"
         (click)="setSelectedOption('compare')"
         routerLink="/compare"
-
       >
         Compare
       </button>
     </div>
-      <router-outlet></router-outlet>
-      <!-- <app-convert></app-convert> -->
+    <router-outlet></router-outlet>
   </div>
 </div>
+
+<div style="margin: 1rem 6rem">
+  <h2>live exchange rates</h2>
+  <button class="show-button" (click)="show()">
+    <img src="../assets/images/plus 1.jpg" /> Add to favourite
+  </button>
+
+  <h6>My portofolio</h6>
+</div>
+
+<div class="l-container">
+  <app-rate-card
+    style="margin-bottom: 5rem; width: 35%"
+    *ngFor="let card of myFavArray"
+    [cardData]="card"
+  >
+    <ng-container>
+      <div>{{ card.value }}</div>
+    </ng-container>
+  </app-rate-card>
+</div>
+
+<app-favourites
+  *ngIf="showFav"
+  (closeFav)="showFav = $event"
+  (favItemChanges)="testFavChanges($event)"
+></app-favourites>

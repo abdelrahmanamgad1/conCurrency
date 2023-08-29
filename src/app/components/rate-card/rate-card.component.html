@@ -1,19 +1,19 @@
-<!-- image   -->
-<div class="">
-<div class="country-logo">
-  <img [src]="cardData.imgURL" alt="country-flag" />
-</div>
-<!-- currency & country  -->
+<div class="rate-container">
+  <div style="display: flex; justify-content: center; align-items: center">
+    <div class="country-logo">
+      <img
+        class="country-flag"
+        [style.backgroundImage]="'url(' + cardData.flagUrl + ')'"
+      />
+    </div>
+    <div class="titles">
+      <h4>{{ cardData.code }}</h4>
+      <h5>{{ cardData.name }}</h5>
+    </div>
+  </div>
+  <div class="extra-data">
+    <ng-content></ng-content>
 
-<div class="titles">
-  <h4>{{ cardData.countryTitle }}</h4>
-  <h5>{{ cardData.currencyTitle }}</h5>
+  </div>
 </div>
-
-<!-- rate or check -->
-
-<div class="extra-data">
-  <ng-content></ng-content>
-</div>
-</div>
-
+<hr>
