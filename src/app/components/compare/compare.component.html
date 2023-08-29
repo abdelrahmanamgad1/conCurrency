@@ -1,1 +1,87 @@
-<p>compare works!</p>
+<form [formGroup]="exform">
+  <div class="card" *ngIf="countries.length > 0">
+    <div class="input-con flex-1">
+      <label class="card-label">Amount</label>
+      <input pInputText pKeyFilter="pint" formControlName="value"/>
+    </div>
+    <div class="input-con flex-2">
+      <label class="card-label" >From</label>
+
+      <p-dropdown [options]="countries" formControlName="srcCountry">
+        <ng-template pTemplate="selectedItem">
+          <div class="drop-down">
+            <img [src]="exform.get('srcCountry')?.value['flagUrl']"/>
+            <div>{{ exform.get("srcCountry")?.value['code'] }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="drop-down">
+            <img [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+    </div>
+  </div>
+
+  <div class="card flex justify-content-center" *ngIf="countries.length > 0">
+    <div class="input-con flex-1">
+      <label class="card-label">To</label>
+      <p-dropdown [options]="countries" formControlName="dstCountry1">
+        <ng-template pTemplate="selectedItem">
+          <div class="drop-down">
+            <img [src]="exform.get('dstCountry1')?.value['flagUrl']"/>
+            <span>{{ exform.get("dstCountry1")?.value['code'] }}</span>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="drop-down">
+            <img [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+
+      <label class="card-label">Amount</label>
+      <input
+        type="text"
+        pInputText
+        readonly="readonly"
+        formControlName="amount1"
+      />
+
+    </div>
+    <div class="input-con flex-2">
+
+      <label class="card-label">To</label>
+      <p-dropdown [options]="countries" formControlName="dstCountry2">
+        <ng-template pTemplate="selectedItem">
+          <div class="drop-down">
+            <img [src]="exform.get('dstCountry2')?.value['flagUrl']"/>
+            <span>{{ exform.get("dstCountry2")?.value['code'] }}</span>
+          </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+          <div class="drop-down">
+            <img [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
+          </div>
+        </ng-template>
+      </p-dropdown>
+      <label class="card-label">Amount</label>
+      <input
+        type="text"
+        pInputText
+        readonly="readonly"
+        formControlName="amount2"
+      />
+    </div>
+  </div>
+
+  <p-button
+    label="Convert"
+    [disabled]="!exform.valid"
+    (onClick)="compare()"
+  ></p-button>
+
+</form>

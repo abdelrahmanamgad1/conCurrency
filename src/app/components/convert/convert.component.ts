@@ -19,10 +19,14 @@ export class ConvertComponent implements OnInit {
   exform!: FormGroup;
   conversionOutput!: number;
   conversionData!: ConvCurrency;
-  selectedCountry: string | undefined;
-  selectedFirst: string = 'undefined';
+  rand1Country={code: 'GBP', name: 'England', flagUrl: 'https://flagsapi.com/GB/flat/64.png'}
+  ;
+  rand2Country={code: 'BHD', name: 'Bahrain', flagUrl: 'https://flagsapi.com/BH/flat/64.png'}
 
-  constructor(private apiService: ApiService, private fb: FormBuilder) {}
+  selectedFirst: string = 'undefined';
+  selectedItem = {code: 'GBP', name: 'England', flagUrl: 'https://flagsapi.com/GB/flat/64.png'}
+
+    constructor(private apiService: ApiService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.exform = this.fb.group({
@@ -30,6 +34,7 @@ export class ConvertComponent implements OnInit {
       srcCountry: ['', [Validators.required]],
       dstCountry: ['', [Validators.required]],
       amount: ['', { value: '', disabled: true }],
+
     });
 
     this.apiService.getCurrencyApi().subscribe((response) => {
@@ -64,10 +69,5 @@ export class ConvertComponent implements OnInit {
         console.log(this.conversionOutput);
       });
   }
-  // show(eventName: string) {
-  //   this.messageService.add({
-  //     severity: 'success',
-  //     summary: eventName + ' is performed',
-  //   });
-  // }
+
 }
