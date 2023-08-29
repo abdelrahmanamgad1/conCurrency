@@ -1,5 +1,5 @@
 <form [formGroup]="exform">
-  <div class="card" *ngIf="countries.length > 0">
+  <div class="card" >
     <div class="input-con flex-1">
       <label class="card-label">Amount</label>
       <input pInputText pKeyFilter="pint" formControlName="value"/>
@@ -7,7 +7,7 @@
     <div class="input-con flex-2">
       <label class="card-label" >From</label>
 
-      <p-dropdown [options]="countries" formControlName="srcCountry">
+      <p-dropdown [options]="apiService.countries" formControlName="srcCountry">
         <ng-template pTemplate="selectedItem">
           <div class="drop-down">
             <img class="imgs"  [src]="exform.get('srcCountry')?.value['flagUrl']"/>
@@ -24,10 +24,10 @@
     </div>
   </div>
 
-  <div class="card flex justify-content-center" *ngIf="countries.length > 0">
+  <div class="card flex justify-content-center" >
     <div class="input-con flex-1">
       <label class="card-label">Targted currency</label>
-      <p-dropdown [options]="countries" formControlName="dstCountry1">
+      <p-dropdown [options]="apiService.countries" formControlName="dstCountry1">
         <ng-template pTemplate="selectedItem">
           <div class="drop-down">
             <img class="imgs" [src]="exform.get('dstCountry1')?.value['flagUrl']"/>
@@ -54,7 +54,7 @@
     <div class="input-con flex-2">
 
       <label class="card-label">Targted currency</label>
-      <p-dropdown [options]="countries" formControlName="dstCountry2">
+      <p-dropdown [options]="apiService.countries" formControlName="dstCountry2">
         <ng-template pTemplate="selectedItem">
           <div class="drop-down">
             <img class="imgs" [src]="exform.get('dstCountry2')?.value['flagUrl']"/>
