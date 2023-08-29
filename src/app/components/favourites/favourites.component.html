@@ -1,20 +1,21 @@
 <div class="fav-container flex-col">
-    <button (click)="closePopup()" class="close-btn">
-      <img src="assets/icons/x.svg" alt="close-btn-image" />
-    </button>
-    <h3>My Favorites</h3>
-    <div class="test">
+  <button (click)="closePopup()" class="close-btn">
+    <img src="assets/icons/x.svg" alt="close-btn-image" />
+  </button>
+  <h3>My Favorites</h3>
+  <div class="test">
 
-      <div class="list-container flex-col">
-        <app-rate-card *ngFor="let card of cardsList" [cardData]="card">
-          <input
-          type="checkbox"
-          (change)="toggleFav(card)"
-          [checked]="card?.checked"
-          />
-          
-        </app-rate-card>
-      </div>
+    <div class="list-container flex-col">
+      <app-rate-card *ngFor="let card of cardsList" [cardData]="card">
+        <input
+        type="checkbox"
+        (change)="toggleFav(card)"
+        [checked]="card?.checked"
+        />
+
+      </app-rate-card>
     </div>
   </div>
-  
+</div>
+
+

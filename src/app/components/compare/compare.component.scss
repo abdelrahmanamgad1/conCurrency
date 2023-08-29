@@ -1,19 +1,20 @@
+
 :host ::ng-deep .p-dropdown {
 
   border-radius: 29.223px;
   border: 0.731px solid #C5C5C5;
   background: #F9F9F9;
-  width: 222.096px;
-  height: 70.136px;
+  width: 13.881rem;
+  height: 4.384rem;
   flex-shrink: 0;
- 
+
 
 }
 
 ::ng-deep {
   .p-inputtext {
-    width: 222.096px;
-    height: 70.136px;
+    width: 13.881rem;
+    height:4.384rem;
     flex-shrink: 0;
     border-radius: 29.223px;
     border: 0.731px solid #C5C5C5;
@@ -21,7 +22,7 @@
 
     color: #000;
     font-family: Poppins;
-    font-size: 23.379px;
+    font-size: 1.461rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -34,11 +35,11 @@
     border-radius: 35.238px;
     background: #0e98d0;
     width: 100% ;
-    margin-top: 13px;
+    margin-top: 0.813rem;
 
     flex-shrink: 0;
     font-family: Montserrat;
-    font-size: 21.107px;
+    font-size: 1.319rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -57,18 +58,18 @@
 .card-label {
   color: #FFF;
   font-family: Montserrat;
-  font-size: 20.456px;
+  font-size: 1.279rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 15px;
+  margin: 0.938rem;
 }
 
 .card {
 
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 14px;
 
   .input-con {
     display: inline-flex;
@@ -96,8 +97,8 @@ drop-down {
 
 }
 .imgs{
-  width: 40.912px;
-  height: 29.223px;
+  width: 2.557rem;
+  height: 1.826rem;
   flex-shrink: 0;
 
 
@@ -105,7 +106,7 @@ drop-down {
 .cos{
   color: #202020;
   font-family: Poppins;
-  font-size: 20.456px;
+  font-size: 1.279rem;
   font-style: normal;
   font-weight: 400;
   line-height:normal;
@@ -114,11 +115,3 @@ drop-down {
 .space{
   margin-top: 10px;
 }
-
-//.dropdown-selected{
-//  display: flex;
-//  justify-content: flex-start;
-//  align-items: center;
-//  gap: 15px;
-//  //padding: 0 5%;
-//}

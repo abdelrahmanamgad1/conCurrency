@@ -42,13 +42,13 @@
     background: #0e98d0;
     width: 100% ;
     margin-top: 13px;
-
     flex-shrink: 0;
     font-family: Montserrat;
     font-size: 21.107px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    border: none;
   }
 
   .p-disabled,
@@ -62,11 +62,11 @@
 }
 
 .card-label {
-  color: #fff;
+  color: #FFF;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 24.667px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   margin: 15px;
 }
@@ -94,10 +94,10 @@
 
 }
 
-.drop-down {
+drop-down {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 15px;
   padding: 1% 5%;
 
@@ -119,11 +119,3 @@
   line-height:normal;
   display: inline;
 }
-
-//.dropdown-selected{
-//  display: flex;
-//  justify-content: flex-start;
-//  align-items: center;
-//  gap: 15px;
-//  //padding: 0 5%;
-//}

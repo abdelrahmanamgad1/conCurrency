@@ -25,14 +25,14 @@ export class FavouritesComponent {
 
   toggleFav(card: any) {
     card.checked = !card.checked;
-    
+
     const index = this.selectedFav?.indexOf(card);
     if (index === -1) {
       this.selectedFav?.push(card);
     } else {
       this.selectedFav?.splice(index, 1);
     }
-    
+
   }
   ngOnInit(): void {
     document.body.style.overflow = 'hidden';
