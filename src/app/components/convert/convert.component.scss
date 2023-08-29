@@ -4,6 +4,7 @@
   border: 0.881px solid #c5c5c5;
   background: #f9f9f9;
 
+
 }
 
 ::ng-deep {
@@ -14,6 +15,13 @@
     border: 0.881px solid #c5c5c5;
     background: #f9f9f9;
   }
+
+}
+
+.flag{
+  width: 30px;
+  height: 25px;
+  margin-right: 1rem;
 
 }
 
@@ -75,7 +83,7 @@
 
 drop-down {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 15px;
   padding: 1% 5%;

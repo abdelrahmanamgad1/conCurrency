@@ -13,7 +13,7 @@ export class ApiService {
 
   baseUrl = 'https://diligent-stranger-production.up.railway.app/';
 
-  apiUrl = `${this.baseUrl}/currencies`;
+  apiUrl = `${this.baseUrl}currencies`;
 
   constructor(private http: HttpClient) {}
 
@@ -34,5 +34,24 @@ export class ApiService {
    postData(data: any,baseCurrency:any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/favorite-currencies?base=${baseCurrency}`, data);
   }
+
+  getComparison(
+    base: string,
+    target1: string,
+    target2: string,
+    amount: number
+  ): Observable<{ comparison_result1: number; comparison_result2: number }> {
+    return this.http.get(
+      `${this.baseUrl}/comparison?base=${base}&target1=${target1}&target2=${target2}&amount=${amount}`
+    ).pipe(
+      map((response: any) => {
+        return {
+          comparison_result1: response['data']['comparison_result1'] as number,
+          comparison_result2: response['data']['comparison_result2'] as number,
+        };
+      })
+    );
+  }
+
   }
 
