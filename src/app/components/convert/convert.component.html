@@ -2,16 +2,16 @@
   <div class="card" *ngIf="countries.length > 0">
     <div class="input-con flex-1">
       <label class="card-label">Amount</label>
-      <input pInputText pKeyFilter="pint" formControlName="value" />
+      <input pInputText pKeyFilter="pint" formControlName="value"/>
     </div>
     <div class="input-con flex-2">
-      <label class="card-label" >From</label>
+      <label class="card-label">From</label>
 
       <p-dropdown [options]="countries" formControlName="srcCountry" [(ngModel)]="rand1Country">
         <ng-template pTemplate="selectedItem">
           <div class="drop-down">
 
-              <img class="imgs" [src]="exform.get('srcCountry')?.value['flagUrl']"/>
+            <img class="imgs" [src]="exform.get('srcCountry')?.value['flagUrl']"/>
             <div class="cos">{{ exform.get("srcCountry")?.value['code'] }}</div>
           </div>
         </ng-template>
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="card flex justify-content-center" *ngIf="countries.length > 0" >
+  <div class="card flex justify-content-center" *ngIf="countries.length > 0">
     <div class="input-con flex-1">
       <label class="card-label">To</label>
       <p-dropdown [options]="countries" formControlName="dstCountry" [(ngModel)]="rand2Country">
@@ -59,6 +59,11 @@
     label="Convert"
     [disabled]="!exform.valid"
     (onClick)="convert()"
-  ></p-button>
+  ><div class="card" *ngIf="isLoading">
+    <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
+  </div>
+
+  </p-button>
+
 
 </form>

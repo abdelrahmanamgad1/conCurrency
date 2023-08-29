@@ -24,7 +24,7 @@ export class ConvertComponent implements OnInit {
 
   selectedFirst: string = 'undefined';
   selectedItem = {code: 'GBP', name: 'England', flagUrl: 'https://flagsapi.com/GB/flat/64.png'}
-
+  isLoading: boolean = false;
     constructor(private apiService: ApiService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -43,6 +43,8 @@ export class ConvertComponent implements OnInit {
   }
 
   convert() {
+    this.isLoading=true;
+
     this.apiService
       .getConversion(
         this.exform.get('srcCountry')?.value['code'],
@@ -52,9 +54,12 @@ export class ConvertComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         this.exform.controls['amount'].setValue(response);
+        this.isLoading=false;
         console.log(response);
         console.log(this.conversionOutput);
-      });
-  }
+      }
+
+      );
+    }
 
 }
