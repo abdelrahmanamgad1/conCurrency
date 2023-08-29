@@ -2,7 +2,7 @@
   background-image: url(../../../assets/images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,42 +22,36 @@
   padding: 6% 7%;
   display: flex;
   flex-direction: column;
-  margin: auto;
   border: 0.1px solid rgb(128, 128, 128);
   justify-content: center;
   align-items: center;
 
-  
+
 
   .switch-button {
-    padding: 1%;
-    display: flex;
-    margin-bottom: 2%;
     border-radius: 30px;
-    // justify-content: space-between;
     font-size: 18px;
     background-color: #f0f0f0ef;
     display: flex;
-    width: 554.841px;
-    height: 81.047px;
+    width:31.25rem;
+    height: 4.375rem;
     justify-content: center;
     align-items: center;
-    gap: 111.487px;
+    gap: 6.968rem;
     .switch-button-option {
       cursor: pointer;
-      // padding: 1rem 3.3rem;
-      // display: inline-flex;
-
+      padding: 1rem 3.3rem;
+      display: inline-flex;
       background: transparent;
       outline: none;
       text-align: center;
       color: black;
       transition: background-color 0.3s, color 0.3s;
       border: none;
-      border-radius: 36.292px;
+      border-radius: 33px;
       display: flex;
-      width: 239.088px;
-      height: 81.047px;
+      width: 12.5rem;
+      height: 4.375rem;
       padding: 16.113px;
       justify-content: center;
       align-items: center;

@@ -60,9 +60,41 @@
     [disabled]="!exform.valid"
     (onClick)="convert()"
   >
-    <div class="card" *ngIf="isLoading">
-      <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
-    </div>
+  <div class="loadingio-spinner-blocks-zkur3377q"><div class="ldio-fkusm7yygie" *ngIf="isLoading">
+    <div style='left:16px;top:16px;animation-delay:0s'></div><div style='left:40px;top:16px;animation-delay:0.08012820512820512s'></div><div style='left:64px;top:16px;animation-delay:0.16025641025641024s'></div><div style='left:16px;top:40px;animation-delay:0.5608974358974359s'></div><div style='left:64px;top:40px;animation-delay:0.24038461538461536s'></div><div style='left:16px;top:64px;animation-delay:0.4807692307692307s'></div><div style='left:40px;top:64px;animation-delay:0.4006410256410256s'></div><div style='left:64px;top:64px;animation-delay:0.3205128205128205s'></div>
+    </div></div>
+    <style type="text/css">
+    @keyframes ldio-fkusm7yygie {
+      0% { background: #ffffff }
+      12.5% { background: #ffffff }
+      12.625% { background: #ff0011 }
+      100% { background: #ff0011 }
+    }
+    .ldio-fkusm7yygie div {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff0011;
+      animation: ldio-fkusm7yygie 0.641025641025641s linear infinite;
+    }
+    .loadingio-spinner-blocks-zkur3377q {
+      width: 38px;
+      height: 38px;
+      display: inline-block;
+      overflow: hidden;
+      background: rgba(221, 221, 221, 0);
+    }
+    .ldio-fkusm7yygie {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform: translateZ(0) scale(0.38);
+      backface-visibility: hidden;
+      transform-origin: 0 0;
+    }
+    .ldio-fkusm7yygie div { box-sizing: content-box; }
+
+    </style>
   </p-button>
 
 </form>
