@@ -1,29 +1,27 @@
 <div class="background-img">
   <nav class="logo">
-    <img class="img" src="assets/images/final 1 (2).png" />
+    <img class="img" src="assets/images/final 1 (2).png"/>
   </nav>
 
   <div class="container-transperant">
     <div class="switch-button">
       <button
         class="switch-button-option"
-        [class.active]="selectedOption === 'convert'"
-        (click)="setSelectedOption('convert')"
+        routerLinkActive="active"
         routerLink="/convert"
       >
         Convert
       </button>
       <button
         class="switch-button-option"
-        [class.active]="selectedOption === 'compare'"
-        (click)="setSelectedOption('compare')"
+        routerLinkActive="active"
         routerLink="/compare"
 
       >
         Compare
       </button>
     </div>
-      <router-outlet></router-outlet>
-      <!-- <app-convert></app-convert> -->
+    <router-outlet></router-outlet>
+
   </div>
 </div>

@@ -6,7 +6,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error-catching.interceptor';
-import { DropdownComponent } from './shared/ui-elements/dropdown/dropdown.component';
 import { NavigationFormComponent } from './components/navigation-form/navigation-form.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ConvertComponent } from './components/convert/convert.component';
@@ -19,17 +18,19 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { RateCardComponent } from './components/rate-card/rate-card.component';
 import { CompareComponent } from './components/compare/compare.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownComponent,
     NavigationFormComponent,
     LandingPageComponent,
     RateCardComponent,
     ConvertComponent,
     CompareComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +44,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     ButtonModule,
     ReactiveFormsModule,
     DynamicDialogModule,
+    KeyFilterModule
   ],
   providers: [
     {

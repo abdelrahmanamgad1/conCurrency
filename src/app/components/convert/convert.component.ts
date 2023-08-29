@@ -18,7 +18,6 @@ export class ConvertComponent implements OnInit {
   countries: Data[] = [];
   exform!: FormGroup;
   conversionOutput!: number;
-  conversionData!: ConvCurrency;
   rand1Country={code: 'GBP', name: 'England', flagUrl: 'https://flagsapi.com/GB/flat/64.png'}
   ;
   rand2Country={code: 'BHD', name: 'Bahrain', flagUrl: 'https://flagsapi.com/BH/flat/64.png'}
@@ -42,19 +41,7 @@ export class ConvertComponent implements OnInit {
       console.log('-> this.countries', this.countries);
     });
   }
-  get value() {
-    return this.exform.get('value');
-  }
-  get srcCountry() {
-    return this.exform.get('srcCountry');
-  }
-  get dstCountry() {
-    return this.exform.get('dstCountry');
-  }
-  get gender() {
-    return this.exform.get('gender');
-  }
-  setAmount() {}
+
   convert() {
     this.apiService
       .getConversion(

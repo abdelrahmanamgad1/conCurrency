@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'; 
+import {Component} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent {
   constructor( private router : Router){}
-  selectedOption: string = 'convert';
+  selectedConvert: string = 'convert';
+  selectedCompare: string = 'compare';
 
-  setSelectedOption(option: string): void {
-    this.selectedOption = option;
-  }
+
 }
