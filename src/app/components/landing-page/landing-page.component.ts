@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
+import {ApiService} from "../../core/services/api.service";
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
-  constructor( private router : Router){}
-  selectedConvert: string = 'convert';
-  selectedCompare: string = 'compare';
-
-
+  constructor(public apiservice: ApiService) {
+  }
 }

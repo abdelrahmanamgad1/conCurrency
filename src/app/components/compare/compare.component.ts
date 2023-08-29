@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import {Data} from "@angular/router";
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ConvCurrency} from "../../core/interfaces/currency.model";
 import {ApiService} from "../../core/services/api.service";
 
 @Component({
@@ -10,14 +8,14 @@ import {ApiService} from "../../core/services/api.service";
   styleUrls: ['./compare.component.scss']
 })
 export class CompareComponent {
-  countries: Data[] = [];
   exform!: FormGroup;
   conversionOutput!: number;
-  conversionData!: ConvCurrency;
   selectedCountry: string | undefined;
-  selectedFirst: string = 'undefined';
+  isLoading: boolean = false;
 
-  constructor(private apiService: ApiService, private fb: FormBuilder) {}
+
+  constructor(public apiService: ApiService, private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.exform = this.fb.group({
@@ -26,30 +24,37 @@ export class CompareComponent {
       dstCountry1: ['', [Validators.required]],
       dstCountry2: ['', [Validators.required]],
 
-      amount1: ['', { value: '', disabled: true }],
-      amount2: ['', { value: '', disabled: true }],
+      amount1: ['', {value: '', disabled: true}],
+      amount2: ['', {value: '', disabled: true}],
 
     });
+    this.exform.get('srcCountry')?.setValue(this.apiService.countries[1])
+    this.exform.get('dstCountry1')?.setValue(this.apiService.countries[2])
+    this.exform.get('dstCountry2')?.setValue(this.apiService.countries[3])
 
-    this.apiService.getCurrencyApi().subscribe((response) => {
-      this.countries = response;
-      console.log('-> this.countries', this.countries);
-    });
+
   }
+
   get value() {
     return this.exform.get('value');
   }
+
   get srcCountry() {
     return this.exform.get('srcCountry');
   }
+
   get dstCountry1() {
     return this.exform.get('dstCountry1');
   }
+
   get dstCountry2() {
     return this.exform.get('dstCountry2');
   }
 
   compare() {
+    this.isLoading=true;
+
+
     this.apiService
       .getComparison(
         this.exform.get('srcCountry')?.value['code'],
@@ -59,9 +64,10 @@ export class CompareComponent {
       )
       .subscribe((response) => {
         console.log(response);
-        this.exform.controls['amount1'].setValue(response.comparison_result1);
-        this.exform.controls['amount2'].setValue(response.comparison_result2);
+        this.exform.controls['amount1'].setValue(response.firstTargetCurrency.conversion_result);
+        this.exform.controls['amount2'].setValue(response.secondTargetCurrency.conversion_result);
         console.log(response);
+        this.isLoading=false;
         console.log(this.conversionOutput);
       });
   }

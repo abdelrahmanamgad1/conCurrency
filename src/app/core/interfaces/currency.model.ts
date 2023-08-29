@@ -1,15 +1,15 @@
 export interface Currency {
   statusCode: number;
-  data: Data[];
+  data: Country[];
 }
 
-export interface Data {
+export interface Country {
   code: string;
   url: string;
   name: string;
 }
 
-export interface ConvCurrency{
+export interface ConvCurrency {
   base: string;
   target: string;
   amount: number;
