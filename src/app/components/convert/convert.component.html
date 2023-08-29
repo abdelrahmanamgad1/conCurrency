@@ -11,14 +11,14 @@
         <ng-template pTemplate="selectedItem">
           <div class="drop-down">
 
-              <img class="flag" [src]="exform.get('srcCountry')?.value['flagUrl']"/>
-            <div>{{ exform.get("srcCountry")?.value['code'] }}</div>
+              <img class="imgs" [src]="exform.get('srcCountry')?.value['flagUrl']"/>
+            <div class="cos">{{ exform.get("srcCountry")?.value['code'] }}</div>
           </div>
         </ng-template>
         <ng-template let-country pTemplate="item">
           <div class="drop-down">
-            <img class="flag" [src]="country.flagUrl"/>
-            <span>{{ country.code }}</span>
+            <img class="imgs" [src]="country.flagUrl"/>
+            <span class="cos">{{ country.code }}</span>
           </div>
         </ng-template>
       </p-dropdown>
@@ -31,14 +31,14 @@
       <p-dropdown [options]="countries" formControlName="dstCountry" [(ngModel)]="rand2Country">
         <ng-template pTemplate="selectedItem">
           <div class="drop-down">
-            <img class="flag" [src]="exform.get('dstCountry')?.value['flagUrl']"/>
-            <span>{{ exform.get("dstCountry")?.value['code'] }}</span>
+            <img class="imgs" [src]="exform.get('dstCountry')?.value['flagUrl']"/>
+            <span class="cos">{{ exform.get("dstCountry")?.value['code'] }}</span>
           </div>
         </ng-template>
         <ng-template let-country pTemplate="item">
           <div class="drop-down">
-            <img class="flag" [src]="country.flagUrl"/>
-            <span>{{ country.code }}</span>
+            <img class="imgs" [src]="country.flagUrl"/>
+            <span class="cos">{{ country.code }}</span>
           </div>
         </ng-template>
       </p-dropdown>

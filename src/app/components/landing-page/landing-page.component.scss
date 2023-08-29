@@ -27,27 +27,48 @@
   justify-content: center;
   align-items: center;
 
+  
+
   .switch-button {
     padding: 1%;
     display: flex;
     margin-bottom: 2%;
-    border-radius: 30px; 
-    width: 20vw;
-    justify-content: space-between;
+    border-radius: 30px;
+    // justify-content: space-between;
     font-size: 18px;
-    background-color: #F0F0F0;
-    gap: 15px;
+    background-color: #f0f0f0ef;
+    display: flex;
+    width: 554.841px;
+    height: 81.047px;
+    justify-content: center;
+    align-items: center;
+    gap: 111.487px;
     .switch-button-option {
       cursor: pointer;
-      padding: 1rem 3.3rem;
-      display: inline-flex;
-      border: none;
+      // padding: 1rem 3.3rem;
+      // display: inline-flex;
+
       background: transparent;
       outline: none;
       text-align: center;
       color: black;
       transition: background-color 0.3s, color 0.3s;
-      border-radius: 20px;
+      border: none;
+      border-radius: 36.292px;
+      display: flex;
+      width: 239.088px;
+      height: 81.047px;
+      padding: 16.113px;
+      justify-content: center;
+      align-items: center;
+      gap: 16.113px;
+      flex-shrink: 0;
+      color: #141414;
+      font-family: Poppins;
+      font-size: 24.314px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
       &.active {
         background-color: #FFF;
       }
