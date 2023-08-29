@@ -34,7 +34,7 @@ export class ConvertComponent implements OnInit {
 
     this.apiService.getCurrencyApi().subscribe((response) => {
       this.countries = response;
-      console.log('-> this.countries', this.countries);
+    
     });
   }
   get value() {
@@ -58,16 +58,16 @@ export class ConvertComponent implements OnInit {
         this.exform.get('value')?.value
       )
       .subscribe((response) => {
-        console.log(response);
+       
         this.exform.controls['amount'].setValue(response);
-        console.log(response);
-        console.log(this.conversionOutput);
+       
       });
+
+      
+      
+      localStorage.setItem('srcCountry',JSON.stringify(this.srcCountry?.value))
+      localStorage.setItem('value',JSON.stringify(this.value?.value))
+      
   }
-  // show(eventName: string) {
-  //   this.messageService.add({
-  //     severity: 'success',
-  //     summary: eventName + ' is performed',
-  //   });
-  // }
+ 
 }
