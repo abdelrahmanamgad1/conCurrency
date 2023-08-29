@@ -1,3 +1,88 @@
+//.background-img {
+//  background-image: url(../../../assets/images/background.jpg);
+//  background-size: cover;
+//  background-repeat: no-repeat;
+//  height: 100vh;
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  flex-direction: column;
+//
+//  .logo {
+//    margin-right: auto;
+//    display: flex;
+//    padding: 2% 5%;
+//  }
+//}
+//
+//.container-transperant {
+//  border-radius: 18px;
+//  background: linear-gradient(134deg, rgba(0, 0, 0, 0.40) 0%, rgba(157, 157, 157, 0.20) 100%);
+//  backdrop-filter: blur(4.504402160644531px);
+//  padding: 6% 7%;
+//  display: flex;
+//  flex-direction: column;
+//  margin: auto;
+//  border: 0.1px solid rgb(128, 128, 128);
+//  justify-content: center;
+//  align-items: center;
+//
+//
+//
+//  .switch-button {
+//    padding: 1%;
+//    display: flex;
+//    margin-bottom: 2%;
+//    border-radius: 30px;
+//    // justify-content: space-between;
+//    font-size: 18px;
+//    background-color: #f0f0f0ef;
+//    display: flex;
+//    width: 554.841px;
+//    height: 81.047px;
+//    justify-content: center;
+//    align-items: center;
+//    gap: 111.487px;
+//    .switch-button-option {
+//      cursor: pointer;
+//      // padding: 1rem 3.3rem;
+//      // display: inline-flex;
+//
+//      background: transparent;
+//      outline: none;
+//      text-align: center;
+//      color: black;
+//      transition: background-color 0.3s, color 0.3s;
+//      border: none;
+//      border-radius: 36.292px;
+//      display: flex;
+//      width: 239.088px;
+//      height: 81.047px;
+//      padding: 16.113px;
+//      justify-content: center;
+//      align-items: center;
+//      gap: 16.113px;
+//      flex-shrink: 0;
+//      color: #141414;
+//      font-family: Poppins;
+//      font-size: 24.314px;
+//      font-style: normal;
+//      font-weight: 400;
+//      line-height: normal;
+//      &.active {
+//        background-color: #FFF;
+//      }
+//    }
+//  }
+//}
+//
+//
+//.switch-button-option.active {
+//  background-color: white;
+//  color: black;
+//
+//}
+//------------------------------------------------------------------------------------------------------------------
 .background-img {
   background-image: url(../../../assets/images/background.jpg);
   background-size: cover;
@@ -7,7 +92,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 
   .logo {
     margin-right: auto;
@@ -28,44 +112,27 @@
   justify-content: center;
   align-items: center;
 
-
-
   .switch-button {
     padding: 1%;
     display: flex;
     margin-bottom: 2%;
     border-radius: 30px;
+    width: 20vw;
+    justify-content: space-between;
     font-size: 18px;
-    background-color: #f0f0f0ef;
-    width: 554.841px;
-    height: 81.047px;
-    justify-content: center;
-    align-items: center;
-    gap: 111.487px;
+    background-color: #F0F0F0;
+    gap: 15px;
     .switch-button-option {
       cursor: pointer;
-      // padding: 1rem 3.3rem;
-      // display: inline-flex;
-
+      padding: 1rem 3.3rem;
+      display: inline-flex;
+      border: none;
       background: transparent;
       outline: none;
       text-align: center;
       color: black;
       transition: background-color 0.3s, color 0.3s;
-      border: none;
-      border-radius: 36.292px;
-      display: flex;
-      width: 239.088px;
-      height: 81.047px;
-      padding: 16.113px;
-      justify-content: center;
-      align-items: center;
-      gap: 16.113px;
-      flex-shrink: 0;
-      font-size: 24.314px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
+      border-radius: 20px;
       &.active {
         background-color: #FFF;
       }
@@ -77,5 +144,33 @@
 .switch-button-option.active {
   background-color: white;
   color: black;
+
+}
+.l-container {
+  padding: 1rem;
+  background-color: white;
+  margin: 1rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15%;
+
+}
+button{
+  margin-left: 80%;
+  background-color: white;
+  border-radius: 20px;
+  width: 11rem;
+  margin-top: 10px
+}
+
+.show-button{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  img{
+    width: 25px;
+    margin: 0.25rem 0.5rem 0.25rem .75rem;
+  }
 
 }

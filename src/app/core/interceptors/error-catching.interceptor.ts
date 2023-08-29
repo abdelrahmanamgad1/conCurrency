@@ -33,11 +33,9 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): any {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.log('Passed through the interceptor inshallah');
-
         this.notificationService.SetErrorMessage({
-          message: 'mesh shayef error',
-          title: 'Sabet',
+          message: 'try again',
+          title: 'ERROR!!',
           ic: toastrConfig,
           type: 'error',
         });

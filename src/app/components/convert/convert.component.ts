@@ -4,7 +4,7 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
-import {ApiService} from 'src/app/core/services/api.service';
+import {ApiService} from "../../core/services/api.service";
 
 @Component({
   selector: 'app-convert',
@@ -29,7 +29,10 @@ export class ConvertComponent implements OnInit {
     this.exform.get('srcCountry')?.setValue(this.apiService.countries[1])
     this.exform.get('dstCountry')?.setValue(this.apiService.countries[2])
   }
-
+  get gender() {
+    return this.exform.get('gender');
+  }
+  setAmount() {}
   convert() {
     this.isLoading=true;
 
@@ -40,10 +43,16 @@ export class ConvertComponent implements OnInit {
         this.exform.get('value')?.value
       )
       .subscribe((response) => {
+
         this.exform.controls['amount'].setValue(response);
+
         this.isLoading=false;
 
       });
+
+      localStorage.setItem('srcCountry',JSON.stringify(this.exform.get('srcCountry')?.value))
+      localStorage.setItem('value',JSON.stringify(this.exform.get('srcCountry')?.value))
+
   }
 
 }

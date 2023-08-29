@@ -7,6 +7,5 @@ import { CurrencyCardModel } from 'src/app/models/data.model';
   styleUrls: ['./rate-card.component.scss'],
 })
 export class RateCardComponent {
-  @Input() cardData!: CurrencyCardModel
-  
+  @Input() cardData!: any
 }

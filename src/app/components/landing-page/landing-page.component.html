@@ -2,8 +2,8 @@
   <nav class="logo">
     <img class="img" src="assets/images/final 1 (2).png"/>
   </nav>
-
-  <div class="container-transperant" *ngIf="apiservice.countries.length > 0; else spinner">
+<!--  *ngIf="apiService.countries.length > 0; else spinner"-->
+  <div class="container-transperant">
     <div class="switch-button">
       <button
         class="switch-button-option"
@@ -16,6 +16,7 @@
         class="switch-button-option"
         routerLinkActive="active"
         routerLink="/compare"
+
       >
         Compare
       </button>
@@ -27,3 +28,30 @@
     <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
   </ng-template>
 </div>
+
+<div style="margin: 1rem 6rem">
+  <h2>live exchange rates</h2>
+  <button class="show-button" (click)="show()">
+    <img src="../assets/images/plus 1.jpg" /> Add to favourite
+  </button>
+
+  <h6>My portofolio</h6>
+</div>
+
+<div class="l-container">
+  <app-rate-card
+    style="margin-bottom: 5rem; width: 35%"
+    *ngFor="let card of myFavArray"
+    [cardData]="card"
+  >
+    <ng-container>
+      <div>{{ card.value }}</div>
+    </ng-container>
+  </app-rate-card>
+</div>
+
+<app-favourites
+  *ngIf="showFav"
+  (closeFav)="showFav = $event"
+  (favItemChanges)="testFavChanges($event)"
+></app-favourites>

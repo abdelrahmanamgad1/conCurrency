@@ -15,39 +15,7 @@ import {CardsListStaticData} from './models/data.static';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'conCurrency';
-  toast!: toastPayload;
-  currencies: Currency[] = [];
-  myFavArray = [];
-  showFav = false;
-  staticCardsList = CardsListStaticData;
-
-  constructor(
-    private notificationService: NotificationService,
-    private apiService: ApiService,
-  ) {
-    this.getData()
-  }
-
-  getData() {
-    this.apiService.getCurrencyApi().subscribe((res) => {
-      this.apiService.countries = res;
-    });
-  }
-
-
-  testFavChanges(card: any) {
-    console.log("plaaaaaaaaaaaaaaaaaaaaaaa");
-
-    // const favArray: any = localStorage.getItem('myArrayKey');
-    console.log(card);
-    // this.myFavArray=card;
-
-
-    // Parse the JSON string back into an array
-    // this.myFavArray = JSON.parse(favArray);
-    // console.log(this.myFavArray);
-
-    // console.log(card);
+  constructor() {
+    localStorage.setItem('favList',JSON.stringify([]))
   }
 }
