@@ -11,6 +11,8 @@ export class CompareComponent {
   exform!: FormGroup;
   conversionOutput!: number;
   selectedCountry: string | undefined;
+  isLoading: boolean = false;
+
 
   constructor(public apiService: ApiService, private fb: FormBuilder) {
   }
@@ -50,6 +52,9 @@ export class CompareComponent {
   }
 
   compare() {
+    this.isLoading=true;
+
+
     this.apiService
       .getComparison(
         this.exform.get('srcCountry')?.value['code'],
@@ -62,6 +67,7 @@ export class CompareComponent {
         this.exform.controls['amount1'].setValue(response.firstTargetCurrency.conversion_result);
         this.exform.controls['amount2'].setValue(response.secondTargetCurrency.conversion_result);
         console.log(response);
+        this.isLoading=false;
         console.log(this.conversionOutput);
       });
   }
