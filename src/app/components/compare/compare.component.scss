@@ -1,31 +1,17 @@
-
 :host ::ng-deep .p-dropdown {
-
-  border-radius: 29.223px;
-  border: 0.731px solid #C5C5C5;
-  background: #F9F9F9;
-  width: 13.881rem;
-  height: 4.384rem;
-  flex-shrink: 0;
-
+  width: 14rem;
+  border-radius: 35.238px;
+  border: 0.881px solid #c5c5c5;
+  background: #f9f9f9;
 
 }
 
 ::ng-deep {
   .p-inputtext {
-    width: 13.881rem;
-    height:4.384rem;
+    border-radius: 35.238px;
     flex-shrink: 0;
-    border-radius: 29.223px;
-    border: 0.731px solid #C5C5C5;
-    background: #F9F9F9;
-
-    color: #000;
-    font-family: Poppins;
-    font-size: 1.461rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    border: 0.881px solid #c5c5c5;
+    background: #f9f9f9;
   }
 
 }
@@ -34,12 +20,11 @@
   .p-button {
     border-radius: 35.238px;
     background: #0e98d0;
-    width: 100% ;
-    margin-top: 0.813rem;
+    width: 100%;
 
     flex-shrink: 0;
     font-family: Montserrat;
-    font-size: 1.319rem;
+    font-size: 21.107px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -56,62 +41,62 @@
 }
 
 .card-label {
-  color: #FFF;
+  color: #fff;
   font-family: Montserrat;
-  font-size: 1.279rem;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
-  margin: 0.938rem;
 }
 
-.card {
-
+.flex-con {
+  gap: 10px;
   display: flex;
-  justify-content: space-between;
-  gap: 14px;
-
-  .input-con {
-    display: inline-flex;
+margin-bottom: 10px;
+  .card {
     flex-direction: column;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 
-    &.flex-2 {
-      flex: 2;
+    .input-con {
+      display: inline-flex;
+      flex-direction: column;
+
+      label {
+  margin: 0.5rem 0;
+      }
+
+
     }
 
-    &.flex-1 {
-      flex: 1;
-    }
 
   }
-
-
 }
+
 
 drop-down {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 15px;
   padding: 1% 5%;
 
 }
-.imgs{
-  width: 2.557rem;
-  height: 1.826rem;
-  flex-shrink: 0;
 
+.flag {
+  width: 30px;
+  height: 25px;
+  margin-right: 1rem;
 
 }
-.cos{
-  color: #202020;
-  font-family: Poppins;
-  font-size: 1.279rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height:normal;
-  display: inline;
-}
-.space{
-  margin-top: 10px;
-}
+
+//.dropdown-selected{
+//  display: flex;
+//  justify-content: flex-start;
+//  align-items: center;
+//  gap: 15px;
+//  //padding: 0 5%;
+//}
+

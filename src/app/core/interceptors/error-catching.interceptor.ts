@@ -35,7 +35,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         this.notificationService.SetErrorMessage({
           message: 'try again',
-          title: 'ERROR!!',
+          title: 'ERROR!',
           ic: toastrConfig,
           type: 'error',
         });

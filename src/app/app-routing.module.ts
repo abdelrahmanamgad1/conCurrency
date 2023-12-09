@@ -5,7 +5,6 @@ import { CompareComponent } from './components/compare/compare.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/convert', pathMatch: 'full' },
-
   { path: 'convert', component: ConvertComponent },
   { path: 'compare', component: CompareComponent },
 ];

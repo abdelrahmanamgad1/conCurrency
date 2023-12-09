@@ -1,32 +1,44 @@
+import {Component} from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
 import { Currency } from 'src/app/core/interfaces/currency.model';
 import { toastPayload } from 'src/app/core/interfaces/toastPayLoad';
-import {ApiService} from "../../core/services/api.service";
-
+import { ApiService } from 'src/app/core/services/api.service';
+import { NotificationService } from 'src/app/core/services/notification.service';
+import { CardsListStaticData } from 'src/app/models/data.static';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss'],
+  styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
   selectedOption: string = 'convert';
   title = 'conCurrency';
   toast!: toastPayload;
   data: Currency[] = [];
+  datas = '';
   arr!: string;
   myFavArray: any = [];
   showFav = false;
+  staticCardsList: any;
   srcCountry: any;
   value: any;
-  constructor(public apiService: ApiService) {
+  convertingArray: any[] = [];
+
+  constructor( private apiService: ApiService) {
+    this.myFavArray = JSON.parse(localStorage.getItem('selectedFav')!);
+  }
+  setSelectedOption(option: string): void {
+    this.selectedOption = option;
   }
   testFavChanges(card: any) {
     this.srcCountry = JSON.parse(localStorage.getItem('srcCountry') as any);
     this.value = JSON.parse(localStorage.getItem('value') as any);
 
     this.myFavArray = card;
-    this.myFavArray?.push(this.srcCountry);
+    // if(localStorage.getItem('favList')){
+    //
+    // }
     localStorage.setItem('favList', JSON.stringify(this.myFavArray));
     this.myFavArray = JSON.parse(localStorage.getItem('favList') as any);
 
@@ -37,7 +49,7 @@ export class LandingPageComponent {
           (response: any) => {
             this.myFavArray[i]['value'] = response;
           },
-          (err:any) => {
+          (err) => {
             console.log(err);
           }
         );
@@ -53,4 +65,5 @@ export class LandingPageComponent {
   show(){
     this.showFav = true
   }
+
 }

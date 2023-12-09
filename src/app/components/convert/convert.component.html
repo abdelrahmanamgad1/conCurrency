@@ -1,5 +1,5 @@
 <form [formGroup]="exform">
-  <div class="card">
+  <div class="card" *ngIf="apiService.countries.length > 0">
     <div class="input-con flex-1">
       <label class="card-label">Amount</label>
       <input pInputText pKeyFilter="pint" formControlName="value"/>
@@ -9,36 +9,37 @@
 
       <p-dropdown [options]="apiService.countries" formControlName="srcCountry">
         <ng-template pTemplate="selectedItem">
-          <div class="drop-down">
 
-            <img class="imgs" [src]="exform.get('srcCountry')?.value['flagUrl']"/>
-            <div class="cos">{{ exform.get("srcCountry")?.value['code'] }}</div>
+          <div class="drop-down-item">
+            <img class="flag" [src]="exform.get('srcCountry')?.value['flagUrl']"/>
+            <span style="display-flex">{{ exform.get("srcCountry")?.value['code'] }}</span>
           </div>
+
         </ng-template>
         <ng-template let-country pTemplate="item">
-          <div class="drop-down">
-            <img class="imgs" [src]="country.flagUrl"/>
-            <span class="cos">{{ country.code }}</span>
+          <div>
+            <img class="flag" [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
           </div>
         </ng-template>
       </p-dropdown>
     </div>
   </div>
 
-  <div class="card flex justify-content-center">
+  <div class="card flex justify-content-center" *ngIf="this.apiService.countries.length > 0" >
     <div class="input-con flex-1">
       <label class="card-label">To</label>
       <p-dropdown [options]="apiService.countries" formControlName="dstCountry">
-        <ng-template pTemplate="selectedItem">
-          <div class="drop-down">
-            <img class="imgs" [src]="exform.get('dstCountry')?.value['flagUrl']"/>
-            <span class="cos">{{ exform.get("dstCountry")?.value['code'] }}</span>
+        <ng-template pTemplate="selectedItem" class="drop-down-item">
+          <div>
+            <img class="flag" [src]="exform.get('dstCountry')?.value['flagUrl']"/>
+            <span>{{ exform.get("dstCountry")?.value['code'] }}</span>
           </div>
         </ng-template>
         <ng-template let-country pTemplate="item">
-          <div class="drop-down">
-            <img class="imgs" [src]="country.flagUrl"/>
-            <span class="cos">{{ country.code }}</span>
+          <div>
+            <img class="flag" [src]="country.flagUrl"/>
+            <span>{{ country.code }}</span>
           </div>
         </ng-template>
       </p-dropdown>
@@ -60,8 +61,9 @@
     [disabled]="!exform.valid"
     (onClick)="convert()"
   >
-  
-
-    </p-button>
+    <div class="card" *ngIf="isLoading">
+      <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s"></p-progressSpinner>
+    </div>
+  </p-button>
 
 </form>

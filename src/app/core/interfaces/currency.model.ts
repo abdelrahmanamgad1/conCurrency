@@ -7,6 +7,12 @@ export interface Country {
   code: string;
   url: string;
   name: string;
+  selected?: boolean;
+  rate?: number;
+
+}
+export interface CountryFav extends Country{
+  checked:boolean;
 }
 
 export interface ConvCurrency {
@@ -14,18 +20,3 @@ export interface ConvCurrency {
   target: string;
   amount: number;
 }
-
-// export interface Currency {
-//   statusCode: number;
-//   data: Data[];
-// }
-
-// export interface Data {
-//   code: string;
-//   name: string;
-//   url: string;
-// }
-
-// export dropDown{
-
-// }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Country} from '../interfaces/currency.model';
+import {Country, Currency} from '../interfaces/currency.model';
 import {Observable, map} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
@@ -8,18 +8,17 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class ApiService {
   countries: Country[] = [];
-  testUrl =
-    'https://v6.exchangerate-api.com/v6/ecf10bab01b34bf0de9636e1/latest/USD';
 
-  baseUrl = 'http://tiresome-part-production.up.railway.app/';
+  baseUrl = 'https://tiresome-part-production.up.railway.app';
 
-  apiUrl = `${this.baseUrl}currencies`;
+  apiUrl = `${this.baseUrl}/currencies`;
 
   constructor(private http: HttpClient) {
   }
 
   getCurrencyApi(): Observable<Country[]> {
-    return this.http.get<Country[]>(this.apiUrl).pipe(map((res: any) => res.data));
+    return this.http.get<Country[]>(this.apiUrl).pipe(map((res: any) => this.countries = res.data));
+
   }
 
   getConversion(
@@ -55,4 +54,31 @@ export class ApiService {
     );
   }
 
+  getFavourites() {
+    let favourites = localStorage.getItem('favList')
+      ? JSON.parse(localStorage.getItem('myPortfolio') || '[]')
+      : [];
+    return favourites;
+  }
+  updateFavs(currency: Country) {
+    let myFavs = this.getFavourites();
+    if (currency.selected) {
+      myFavs.push(currency);
+    } else {
+      myFavs = myFavs.filter(
+        (c: Country) => c.code != currency.code
+      );
+    }
+    localStorage.setItem('favList', JSON.stringify(myFavs));
+  }
+
+  setNewFavorite(data: Country[]) {
+    localStorage.setItem('favList', JSON.stringify(data));
+  }
+
 }
+
+
+//
+// baseUrl = 'https://tiresome-part-production.up.railway.app';
+

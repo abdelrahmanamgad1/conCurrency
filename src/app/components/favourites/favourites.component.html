@@ -6,16 +6,13 @@
   <div class="test">
 
     <div class="list-container flex-col">
-      <app-rate-card *ngFor="let card of cardsList" [cardData]="card">
+      <app-rate-card *ngFor="let card of selectedFav;let index = index" [cardData]="card">
         <input
-        type="checkbox"
-        (change)="toggleFav(card)"
-        [checked]="card?.checked"
+          type="checkbox"
+          (change)="toggleFav($event,index)"
+          [checked]="card?.checked"
         />
-
       </app-rate-card>
     </div>
   </div>
 </div>
-
-
